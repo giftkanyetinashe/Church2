@@ -1,0 +1,121 @@
+.admin-giving-page-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Reusing .page-header-controls and .action-and-filters if global */
+.page-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header-controls h2 { margin: 0; font-size: 1.6rem; color: #333; }
+.action-and-filters { display: flex; gap: 10px; align-items: center; } /* Reduced gap for more buttons */
+
+.btn.btn-add-contribution, .btn.btn-manage-batches {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn.btn-add-contribution { background-color: #28a745; /* Green */ }
+.btn.btn-add-contribution:hover { background-color: #1e7e34; }
+.btn.btn-manage-batches { background-color: #17a2b8; /* Blue */ }
+.btn.btn-manage-batches:hover { background-color: #0056b3; }
+.btn i { margin-right: 4px; }
+
+
+.filters-bar.giving-filters-bar { /* Specific to giving page if needed */
+    display: flex;
+    flex-wrap: wrap; /* Allow filters to wrap on smaller screens */
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.search-input-giving,
+.filter-select-giving,
+.date-filter-group input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.search-input-giving { flex-grow: 1; min-width: 250px; }
+.filter-select-giving { min-width: 150px; }
+.date-filter-group { display: flex; align-items: center; gap: 5px; }
+.date-filter-group label { font-size: 0.85rem; color: #555; }
+.date-filter-group input[type="date"] { max-width: 140px; }
+
+
+.giving-summary {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #333;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.admin-giving-table-container {
+    overflow-x: auto;
+}
+
+.admin-giving-page-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem; /* Slightly smaller font for more data */
+}
+
+.admin-giving-page-container table th,
+.admin-giving-page-container table td {
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-giving-page-container table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-giving-page-container table tbody tr:nth-child(even) { background-color: #fdfdfd; }
+.admin-giving-page-container table tbody tr:hover { background-color: #f1f1f1; }
+
+.admin-giving-page-container table .amount-column {
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Re-use .actions-cell and .action-btn styles if global or copy them */
+.actions-cell { white-space: nowrap; text-align: center; }
+.action-btn {
+    background: none; border: none; cursor: pointer; padding: 5px; margin-right: 4px;
+    font-size: 0.9rem; color: #555; transition: color 0.2s ease; line-height: 1;
+}
+.action-btn:last-child { margin-right: 0; }
+.action-btn.view-btn:hover { color: #007bff; }
+.action-btn.edit-btn:hover { color: #ffc107; }
+.action-btn.delete-btn:hover { color: #dc3545; }
+.action-btn i { vertical-align: middle; }
+
+.no-data-message {
+    text-align: center; padding: 30px; font-style: italic; color: #777; font-size: 1rem;
+}

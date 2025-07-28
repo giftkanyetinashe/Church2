@@ -1,0 +1,594 @@
+.member-portal-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa; /* Light background for the portal */
+}
+
+.member-portal-header {
+    background-color: #34495e; /* Primary blue, or your church's brand color */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.portal-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.member-portal-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.member-portal-nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+}
+
+.member-portal-nav a:hover,
+.member-portal-nav a.active { /* You'll need NavLink from react-router-dom for .active */
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+
+.member-portal-content {
+    flex-grow: 1;
+    padding: 25px;
+    max-width: 1100px; /* Max width for content area */
+    width: 100%;
+    margin: 0 auto; /* Center content */
+    box-sizing: border-box;
+}
+
+.member-portal-footer {
+    background-color: #343a40; /* Dark footer */
+    color: #adb5bd;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* Basic styling for content pages within the portal */
+.portal-page-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.portal-page-container h1,
+.portal-page-container h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- Styles for Content Pages within the Portal --- */
+.portal-page-container {
+    background-color: #ffffff; /* Clean white background for content cards */
+    padding: 25px 30px; /* More padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    margin-bottom: 20px; /* Space between multiple content blocks if any */
+}
+
+.portal-page-container h1 {
+    color: #333; /* Darker heading */
+    font-size: 1.8rem; /* Prominent page title */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef; /* Subtle separator */
+    font-weight: 500;
+}
+
+.portal-page-container h2 {
+    color: #444;
+    font-size: 1.5rem;
+    margin-top: 25px; /* Space before subheadings */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.portal-page-container h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.portal-page-container p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.portal-page-container ul, .portal-page-container ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+.portal-page-container li {
+    margin-bottom: 8px;
+}
+
+/* --- Form Elements Styling (Common for Profile, Donate, etc.) --- */
+.portal-form-group {
+    margin-bottom: 20px;
+}
+
+.portal-form-group label {
+    display: block;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.portal-form-group input[type="text"],
+.portal-form-group input[type="email"],
+.portal-form-group input[type="tel"],
+.portal-form-group input[type="password"],
+.portal-form-group input[type="number"],
+.portal-form-group select,
+.portal-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Important for width: 100% */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #495057;
+}
+
+.portal-form-group input:focus,
+.portal-form-group select:focus,
+.portal-form-group textarea:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.portal-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* --- Button Styling --- */
+.btn-portal { /* Generic button for portal pages */
+    display: inline-block;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #34495e; /* Primary button color */
+    border: 1px solid #34495e;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    text-decoration: none; /* For Link components styled as buttons */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-portal:hover {
+    background-color: #5d7fa3;
+    border-color: #34495e;
+}
+.btn-portal:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+}
+
+.btn-portal-secondary {
+    background-color: #6c757d; /* Grey for secondary actions */
+    border-color: #6c757d;
+}
+.btn-portal-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+.btn-portal-success {
+    background-color: #28a745; /* Green for success/positive actions */
+    border-color: #28a745;
+}
+.btn-portal-success:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+}
+
+.btn-portal-danger {
+    background-color: #dc3545; /* Red for danger/delete actions */
+    border-color: #dc3545;
+}
+.btn-portal-danger:hover {
+    background-color: #b02a37;
+    border-color: #b02a37;
+}
+
+.btn-portal-link { /* For link-styled buttons */
+    background-color: transparent;
+    border: none;
+    color: #34495e;
+    padding: 0;
+    text-decoration: underline;
+}
+.btn-portal-link:hover {
+    color: #5d7fa3;
+}
+
+
+/* --- Specific Page Content Styling (Examples) --- */
+
+/* Giving History Page */
+.giving-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.giving-history-table th, .giving-history-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    text-align: left;
+}
+.giving-history-table th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+}
+.giving-history-table td.amount {
+    text-align: right;
+}
+
+/* Event/Group Cards (if you use a card layout) */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card-item {
+    background-color: #fcfcfc;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.card-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.card-item p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* --- Utility classes --- */
+.text-center {
+    text-align: center;
+}
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+
+/* ===== Responsive Adjustments ===== */
+
+/* For mobile screens (e.g., up to 768px) */
+@media (max-width: 768px) {
+    .member-portal-header {
+        flex-wrap: wrap; /* Allow items to wrap */
+        padding: 15px;
+    }
+
+    .member-portal-nav {
+        /* Hide the desktop nav and show a mobile menu instead */
+        display: none;
+    }
+
+    .member-portal-user-actions span {
+        /* Hide the "Welcome, Member!" text on small screens to save space */
+        display: none;
+    }
+
+    .member-portal-content {
+        padding: 15px; /* Less padding on mobile */
+    }
+
+    /* You would add a hamburger menu icon and a slide-out or dropdown menu here */
+    /* We can implement this with JavaScript state next if you like */
+}
+
+
+
+/* src/components/member_portal/MemberPortalLayout.css */
+
+.member-portal-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.member-portal-header {
+    background-color: #34495e; /* Primary blue, or your church's brand color */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure header is on top */
+}
+
+.portal-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Desktop Navigation --- */
+.member-portal-nav-desktop {
+    display: none; /* Hidden by default, shown on larger screens */
+    gap: 25px;
+}
+
+.member-portal-nav-desktop a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding-bottom: 5px; /* Space for the underline */
+    border-bottom: 2px solid transparent; /* Prepare for active state animation */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.member-portal-nav-desktop a:hover,
+.member-portal-nav-desktop a.active { /* This now works with NavLink */
+    color: white;
+    border-bottom-color: #61dafb; /* A nice accent color */
+}
+
+
+.member-portal-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.member-portal-user-actions .welcome-message {
+    font-size: 0.9rem;
+    display: none; /* Hidden on mobile, shown on desktop */
+}
+
+.member-portal-user-actions .logout-btn {
+    background-color: transparent;
+    color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.member-portal-user-actions .logout-btn:hover {
+    background-color: white;
+    color: #34495e; /* Match header color */
+}
+.member-portal-user-actions .logout-btn i {
+    margin-right: 5px;
+}
+.member-portal-user-actions .logout-btn .logout-text {
+    display: none; /* Hide text on mobile for just an icon button */
+}
+
+/* ===== NEW: Mobile Menu Styles ===== */
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0 5px;
+    display: block; /* Shown by default on mobile */
+}
+
+.member-portal-nav-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); /* Add shadow to mobile menu */
+}
+
+.member-portal-nav-mobile a {
+    padding: 18px 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-top: 1px solid #f0f0f0;
+}
+.member-portal-nav-mobile a.active {
+    background-color: #e9f5ff; /* Light blue for active mobile link */
+    color: #007bff;
+}
+
+
+/* --- Main Content & Footer --- */
+.member-portal-content {
+    flex-grow: 1;
+    padding: 20px 15px; /* Mobile-first padding */
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.member-portal-footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+
+/* ===== NEW: Responsive Adjustments ===== */
+
+/* For tablet and desktop screens (e.g., 768px and up) */
+@media (min-width: 768px) {
+    .member-portal-header {
+        padding: 15px 40px; /* More horizontal padding */
+    }
+
+    .member-portal-nav-desktop {
+        display: flex; /* Show the desktop nav */
+    }
+
+    .mobile-menu-toggle {
+        display: none; /* Hide the hamburger icon */
+    }
+
+    .member-portal-nav-mobile {
+        display: none !important; /* Ensure mobile menu is always hidden */
+    }
+
+    .member-portal-user-actions .welcome-message {
+        display: inline; /* Show the "Welcome" message */
+    }
+    
+    .member-portal-user-actions .logout-btn .logout-text {
+        display: inline; /* Show the "Logout" text */
+    }
+
+    .member-portal-content {
+        padding: 40px; /* More padding on larger screens */
+    }
+}
+
+/* Your existing styles for content pages below, no changes needed there */
+/* ... .portal-page-container, .portal-form-group, .btn-portal etc. ... */
+/* ===== NEW: User Dropdown Styles ===== */
+.user-dropdown-container {
+    position: relative; /* This is the anchor for the absolute positioned menu */
+    display: none; /* Hide on mobile by default */
+}
+
+.user-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    border-radius: 20px; /* Pill shape */
+    padding: 5px 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-dropdown-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-dropdown-toggle .user-icon {
+    font-size: 1.4rem;
+}
+
+.user-dropdown-toggle .user-name-display {
+    font-weight: 500;
+}
+
+.user-dropdown-toggle .chevron-icon {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.user-dropdown-toggle .chevron-icon.open {
+    transform: rotate(180deg);
+}
+
+.user-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px); /* Position below the toggle button with some gap */
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 200px; /* Minimum width of the dropdown */
+    z-index: 1010; /* Above the header */
+    overflow: hidden; /* To respect the border-radius on children */
+    padding: 8px 0; /* Vertical padding for the menu */
+    display: flex;
+    flex-direction: column;
+}
+
+.user-dropdown-menu a,
+.user-dropdown-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.user-dropdown-menu a:hover,
+.user-dropdown-menu button:hover {
+    background-color: #f0f2f5; /* Light grey hover for menu items */
+}
+
+.user-dropdown-menu a i,
+.user-dropdown-menu button i {
+    width: 20px;
+    color: #555;
+    text-align: center;
+}
+
+
+/* ===== UPDATED: Responsive Adjustments ===== */
+@media (min-width: 768px) {
+    /* ... (keep existing tablet/desktop styles for header, nav, etc.) ... */
+    
+    .member-portal-nav-desktop {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    /* --- Show the dropdown on desktop --- */
+    .user-dropdown-container {
+        display: block;
+    }
+}
+
+/* ... (Keep your other responsive styles and content page styles) ... */

@@ -1,0 +1,139 @@
+/* src/components/BatchDetailPage.css */
+
+/* --- Page Header --- */
+.batch-page-header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 20px;
+}
+.batch-titles .back-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.batch-titles .back-link:hover {
+    text-decoration: underline;
+}
+.batch-titles h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+}
+.batch-titles p {
+    margin: 0;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Reconciliation Summary --- */
+.batch-reconciliation-summary {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+    align-items: stretch; /* Make boxes same height */
+}
+.summary-box {
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    flex-grow: 1; /* Allow boxes to grow */
+    text-align: center;
+}
+.summary-box span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+.summary-box p {
+    margin: 2px 0 0 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.summary-box.error {
+    background-color: #fff6f6;
+    border-color: #f5c6cb;
+}
+.summary-box.error p { color: #dc3545; }
+
+.summary-box.ok {
+    background-color: #f6fff6;
+    border-color: #c3e6cb;
+}
+.summary-box.ok p { color: #28a745; }
+.batch-reconciliation-summary .btn {
+    align-self: flex-end; /* Align button to bottom */
+}
+
+
+/* --- Entry Form --- */
+.entry-form-container {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.entry-form-container h3 { margin-top: 0; font-size: 1.3rem; }
+
+.entry-form {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 15px;
+    align-items: flex-end; /* Aligns labels and inputs */
+}
+
+/* Specific sizing and ordering using grid-area for larger screens */
+.entry-form .member-search { grid-area: member; }
+.entry-form .amount-input { grid-area: amount; }
+.entry-form .fund-select { grid-area: fund; }
+.entry-form .method-select { grid-area: method; }
+.entry-form .check-input { grid-area: check; }
+.entry-form .btn-add-contribution { grid-area: button; justify-self: start; }
+
+
+/* --- Contributions Table --- */
+.batch-entries-list h3 { font-size: 1.5rem; margin-bottom: 20px; }
+
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 992px) {
+    .batch-page-header {
+        flex-direction: row; /* Side-by-side on desktop */
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .batch-reconciliation-summary {
+        max-width: 60%;
+        justify-content: flex-end;
+    }
+
+    .entry-form {
+        grid-template-columns: repeat(6, 1fr);
+        /* A complex grid definition for speed */
+        grid-template-areas: "member member amount fund method button"
+                             ".      .      .      check  check  ."; /* Check# under Method */
+    }
+    .entry-form .check-input {
+       margin-top: -15px; /* Pull check number closer */
+    }
+}
+@media (min-width: 1200px) {
+    .entry-form {
+         grid-template-areas: "member member amount fund method check button";
+    }
+     .entry-form .check-input {
+       margin-top: 0;
+    }
+}

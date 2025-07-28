@@ -1,0 +1,181 @@
+/* src/components/member_portal/pages/ResourcesPage.css */
+
+/* --- Page-level Styles --- */
+.resources-page .resources-intro-text {
+    font-size: 1rem; /* Slightly smaller intro text for mobile */
+    color: #555;
+    max-width: 700px;
+    margin-bottom: 25px; /* Reduced margin */
+}
+
+.resource-section {
+    margin-bottom: 35px; /* Reduced space between sections */
+}
+
+.resource-section h2 {
+    font-size: 1.3rem; /* Smaller section headings on mobile */
+    color: #333;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 8px; /* Less padding under heading */
+    margin-bottom: 20px; /* Less space after heading */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Less gap for icon */
+}
+.resource-section h2 i {
+    font-size: 1.1rem; /* Control icon size within the heading */
+}
+
+
+/* --- Sermon List Styles (Mobile-First) --- */
+.sermon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sermon-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    padding: 15px; /* Reduced padding for a tighter look on mobile */
+    border-radius: 6px;
+    transition: box-shadow 0.2s ease;
+}
+.sermon-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.sermon-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem; /* Smaller sermon title */
+    color: #333;
+    line-height: 1.3; /* Better line height for wrapping titles */
+}
+.sermon-info p {
+    margin: 0;
+    font-size: 0.85rem; /* Smaller speaker/date text */
+    color: #6c757d;
+}
+.sermon-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.resource-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px; /* Slightly smaller buttons */
+    height: 38px;
+    border: 1px solid #ced4da;
+    border-radius: 50%;
+    color: #495057;
+    text-decoration: none;
+    font-size: 0.9rem; /* Smaller icon inside button */
+    transition: all 0.2s ease;
+}
+.resource-btn:hover {
+    color: white;
+    border-color: transparent;
+}
+.resource-btn.audio:hover { background-color: #007bff; }
+.resource-btn.video:hover { background-color: #dc3545; }
+.resource-btn.notes:hover { background-color: #28a745; }
+
+
+/* --- Document List Styles (Mobile-First) --- */
+.document-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px; /* Tighter gap */
+}
+.document-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reduced gap */
+    padding: 15px; /* Reduced padding */
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.document-item:hover {
+    background-color: #e9f5ff;
+    border-color: #007bff;
+}
+.document-item i {
+    font-size: 2rem; /* Smaller document icon */
+    color: #6c757d;
+}
+.document-item:hover i {
+    color: #007bff;
+}
+.document-item h4 {
+    margin: 0 0 4px 0; /* Tighter margins */
+    color: #333;
+    font-size: 1rem; /* Smaller document title */
+}
+.document-item p {
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem; /* Smaller description */
+    line-height: 1.4;
+}
+.download-indicator {
+    margin-left: auto;
+    color: #adb5bd;
+    font-size: 1.1rem; /* Smaller download icon */
+    transition: color 0.2s ease;
+}
+.document-item:hover .download-indicator {
+    color: #007bff;
+}
+
+/* ======================================= */
+/* === Responsive Adjustments for LARGER screens === */
+/* ======================================= */
+@media (min-width: 768px) {
+    /* Restore or increase sizes for tablets and desktops */
+
+    .resources-page .resources-intro-text {
+        font-size: 1.1rem;
+    }
+
+    .resource-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .sermon-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 20px; /* Restore horizontal padding */
+    }
+    .sermon-info h4 {
+        font-size: 1.1rem;
+    }
+    .sermon-info p {
+        font-size: 0.9rem;
+    }
+    .sermon-links {
+        margin-top: 0;
+    }
+    .resource-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .document-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Increase gap for grid layout */
+    }
+    .document-item {
+        padding: 20px; /* Restore padding */
+    }
+    .document-item h4 {
+        font-size: 1.1rem;
+    }
+}

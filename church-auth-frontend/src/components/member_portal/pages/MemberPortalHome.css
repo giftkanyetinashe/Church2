@@ -1,0 +1,354 @@
+/* src/components/member_portal/pages/MemberPortalHome.css */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+    font-size: 1.3rem;
+    color: #34495e; /* Use a theme color */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* --- Quick Actions Card --- */
+.quick-actions-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of buttons */
+    gap: 15px;
+}
+.quick-actions-buttons .btn-portal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+/* --- Upcoming Engagements Card --- */
+.engagement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.engagement-item:last-child {
+    margin-bottom: 0;
+}
+.engagement-item .icon-event, .engagement-item .icon-group {
+    font-size: 1.8rem;
+    padding-top: 5px; /* Align icon nicely with text */
+}
+.engagement-item .icon-event { color: #e74c3c; } /* Example color */
+.engagement-item .icon-group { color: #3498db; } /* Example color */
+
+.engagement-item div {
+    line-height: 1.4;
+}
+.engagement-item strong {
+    font-size: 0.9rem;
+    color: #666;
+}
+.engagement-item p {
+    margin: 2px 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.engagement-item p a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.engagement-item p a:hover {
+    color: #007bff;
+}
+.engagement-item small {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+
+/* --- Giving Snapshot Card --- */
+.giving-details p {
+    margin-top: 0;
+    font-size: 0.95rem;
+}
+.giving-progress label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #28a745; /* Success green */
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+.progress-bar-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* --- Announcements Card --- */
+.announcements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.announcements-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.announcements-list li:last-child {
+    border-bottom: none;
+}
+.announcements-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.announcements-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Responsive Grid for Desktop --- */
+@media (min-width: 992px) {
+    .dashboard-grid {
+        /* A more complex grid layout for desktop */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    
+    .quick-actions-card {
+        grid-column: 1 / 2; /* Take first column */
+        grid-row: 1 / 2;    /* Take first row */
+    }
+
+    .upcoming-engagements-card {
+        grid-column: 2 / 3; /* Second column */
+        grid-row: 1 / 3;    /* Span two rows to be taller */
+    }
+
+    .giving-snapshot-card {
+        grid-column: 1 / 2; /* First column */
+        grid-row: 2 / 3;    /* Second row */
+    }
+
+    .announcements-card {
+        grid-column: 1 / 3; /* Span full width at the bottom */
+        grid-row: 3 / 4;
+    }
+}
+
+/* =========================================== */
+/* === MOBILE FIRST STYLES (Default State) === */
+/* =========================================== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile ensures all cards stack vertically */
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px; /* Consistent padding for mobile */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+    font-size: 1.2rem; /* Slightly smaller heading on mobile for better fit */
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* --- Quick Actions Card --- */
+.quick-actions-buttons {
+    display: grid;
+    /* CHANGED: Single column on the smallest screens for easier tapping */
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.quick-actions-buttons .btn-portal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    padding: 12px 15px; /* Slightly larger padding for easier tapping */
+}
+
+/* --- Upcoming Engagements Card --- */
+.engagement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.engagement-item:last-child {
+    margin-bottom: 0;
+}
+.engagement-item .icon-event, .engagement-item .icon-group {
+    font-size: 1.8rem;
+    padding-top: 5px;
+}
+.engagement-item .icon-event { color: #e74c3c; }
+.engagement-item .icon-group { color: #3498db; }
+
+.engagement-item div {
+    line-height: 1.4;
+}
+.engagement-item strong {
+    font-size: 0.9rem;
+    color: #666;
+}
+.engagement-item p {
+    margin: 2px 0 4px 0;
+    font-size: 1rem; /* Slightly smaller for mobile */
+    font-weight: 500;
+}
+.engagement-item p a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.engagement-item p a:hover {
+    color: #007bff;
+}
+.engagement-item small {
+    font-size: 0.8rem; /* Smaller date text */
+    color: #555;
+}
+
+
+/* --- Giving Snapshot Card --- */
+.giving-details p {
+    margin-top: 0;
+    font-size: 0.95rem;
+}
+.giving-progress label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+.progress-bar-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* --- Announcements Card --- */
+.announcements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.announcements-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.announcements-list li:last-child {
+    border-bottom: none;
+}
+.announcements-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.announcements-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================================= */
+/* === TABLET & LARGER PHONE STYLES (Intermediate step) === */
+/* ========================================================= */
+@media (min-width: 576px) {
+    .dashboard-card h2 {
+        font-size: 1.3rem; /* Restore slightly larger heading */
+    }
+
+    /* NEW: Make quick actions two columns on slightly wider screens */
+    .quick-actions-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================================================== */
+/* === DESKTOP STYLES (The full grid experience) === */
+/* ================================================== */
+@media (min-width: 992px) {
+    .dashboard-grid {
+        /* A more complex grid layout for desktop */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    /* Assigning cards to grid areas for the masonry-style layout */
+    .quick-actions-card {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .upcoming-engagements-card {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3; /* This card will be taller */
+    }
+
+    .giving-snapshot-card {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .announcements-card {
+        grid-column: 1 / 3; /* Full width at the bottom */
+        grid-row: 3 / 4;
+    }
+}

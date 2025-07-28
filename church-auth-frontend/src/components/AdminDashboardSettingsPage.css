@@ -1,0 +1,95 @@
+.admin-settings-page-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Consistent light background */
+}
+
+/* Reusing .page-header-controls if global, or define here */
+.page-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+.page-header-controls h2 { margin: 0; font-size: 1.8rem; color: #333; }
+
+.settings-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
+    gap: 25px;
+}
+
+.settings-category-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    color: #6f42c1; /* A purple accent for settings, or your brand color */
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.settings-category-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #343a40;
+    font-weight: 500;
+}
+
+.settings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.settings-list li {
+    margin-bottom: 0;
+}
+
+.setting-link {
+    display: block;
+    padding: 12px 10px;
+    text-decoration: none;
+    color: #212529;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin: 5px -10px; /* Expand clickable area */
+}
+
+.setting-link:hover {
+    background-color: #e9ecef;
+    color: #5a28a5; /* Darker purple on hover */
+}
+
+.setting-link h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6f42c1; /* Link color matching icon */
+}
+.setting-link:hover h4 {
+    color: #5a28a5;
+}
+
+.setting-link p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+    line-height: 1.4;
+}

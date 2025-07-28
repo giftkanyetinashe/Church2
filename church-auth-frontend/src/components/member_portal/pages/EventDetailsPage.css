@@ -1,0 +1,39 @@
+.event-register-page h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+.event-date-time-reg {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.portal-error { /* Specific error message style for portal forms if needed */
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+
+.event-fee-info p {
+    margin: 5px 0;
+}
+.event-fee-info strong {
+    color: #0056b3;
+}
+.event-fee-info small {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.event-register-loading, .event-register-not-found {
+    text-align: center;
+    padding: 30px;
+}

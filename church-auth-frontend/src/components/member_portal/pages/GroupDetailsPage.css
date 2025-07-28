@@ -1,0 +1,113 @@
+
+.group-details-page h1 {
+    font-size: 2rem; /* Larger for main title */
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.group-details-banner {
+    width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.group-meta-info {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa; /* Light background for meta info */
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.group-meta-info p {
+    margin-bottom: 8px;
+    font-size: 0.95rem; /* Slightly smaller for meta details */
+    color: #454545;
+    display: flex;
+    align-items: center;
+}
+.group-meta-info p i.fas { /* Target Font Awesome icons */
+    margin-right: 10px;
+    color: #007bff; /* Portal accent color */
+    width: 18px; /* For consistent icon alignment */
+    text-align: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.group-meta-info p:last-child {
+    margin-bottom: 0;
+}
+
+.group-description-section,
+.group-join-action-details,
+.group-contact-info {
+    margin-bottom: 25px;
+}
+
+.group-description-section h3,
+.group-join-action-details h3,
+.group-contact-info h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.group-description-section .full-description {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+    white-space: pre-wrap; /* Preserves line breaks from your string */
+}
+
+.group-join-action-details p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.group-join-action-details .btn-portal-primary {
+    margin-top: 5px; /* Space above the join button */
+}
+
+.registration-status-message { /* Can be shared with EventDetailsPage.css if styles are similar */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    background-color: #fff3cd; /* Example for 'full' or 'closed' status */
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+
+.group-contact-info p a {
+    color: #007bff;
+    text-decoration: none;
+}
+.group-contact-info p a:hover {
+    text-decoration: underline;
+}
+
+.group-details-nav-actions {
+    margin-top: 30px;
+    text-align: right; /* Or left/center based on design */
+}
+
+.group-details-loading,
+.group-details-not-found {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+.group-details-not-found h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.group-details-not-found .btn-portal {
+    margin-top: 15px;
+}

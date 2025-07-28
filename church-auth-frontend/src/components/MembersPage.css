@@ -1,0 +1,180 @@
+.members-page-container {
+    padding: 20px;
+    background-color: #fff; /* White background for the content area */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Ensure it takes available space if rendered within main-content of DashboardPage */
+}
+
+.members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0; /* Light border */
+}
+
+.members-header h2 {
+    margin: 0;
+    font-size: 1.6rem; /* Slightly smaller than main dashboard title */
+    color: #333;
+}
+
+.members-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    min-width: 200px;
+}
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.btn.btn-add-member {
+    background-color: #28a745; /* Green for "Add" */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-flex; /* For icon and text alignment */
+    align-items: center;
+    gap: 5px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn.btn-add-member:hover {
+    background-color: #218838; /* Darker green */
+}
+.btn.btn-add-member i {
+    margin-right: 3px; /* Small space before text */
+}
+
+
+.members-table-container {
+    overflow-x: auto; /* Allows horizontal scrolling for the table on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    font-size: 0.9rem;
+    color: #333; /* Default text color for table content */
+}
+
+table th,
+table td {
+    padding: 12px 15px; /* Consistent padding */
+    border: 1px solid #e0e0e0; /* Light borders for cells */
+    text-align: left; /* Align text to the left */
+    vertical-align: middle; /* Align content vertically in the middle */
+}
+
+table th {
+    background-color: #f8f9fa; /* Very light grey for table header */
+    font-weight: 600; /* Bolder text for headers */
+    color: #495057; /* Darker grey for header text */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdfdfd; /* Subtle striping for even rows */
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Status Badges - these can be reused in MemberDetailPage.css */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px; /* Pill shape */
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #fff;
+    display: inline-block; /* So it doesn't take full width */
+    min-width: 60px; /* Ensure some consistency in width */
+    text-align: center;
+    line-height: 1.2; /* Adjust for vertical centering of text */
+}
+
+.status-active {
+    background-color: #28a745; /* Green */
+}
+
+.status-inactive {
+    background-color: #dc3545; /* Red */
+}
+
+.status-pending {
+    background-color: #ffc107; /* Yellow */
+    color: #212529; /* Darker text for yellow background for better contrast */
+}
+
+.actions-cell {
+    white-space: nowrap; /* Prevent action buttons from wrapping to new line */
+    text-align: center; /* Center the action buttons */
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px; /* Clickable area for icons */
+    margin-right: 5px; /* Space between action buttons */
+    font-size: 1rem; /* Icon size */
+    color: #555; /* Default icon color */
+    transition: color 0.2s ease;
+    line-height: 1; /* Ensure icon is centered */
+}
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+.action-btn.view-btn:hover { color: #007bff; /* Blue */}
+.action-btn.edit-btn:hover { color: #ffc107; /* Yellow */}
+.action-btn.delete-btn:hover { color: #dc3545; /* Red */}
+
+.action-btn i {
+    vertical-align: middle; /* Helps align Font Awesome icons properly */
+}
+
+/* Placeholder message for when no members are found */
+.members-page-container > p {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #777;
+}
+.members-table-container {
+    overflow-x: auto; /* Enables horizontal scroll on small screens if table is too wide */
+}
+
+table {
+    width: 100%;
+    /* ... other table styles ... */
+}
+
+@media (max-width: 767px) {
+    /* Optional: Hide less critical columns on very small screens */
+    /* table th.optional-column,
+    table td.optional-column {
+        display: none;
+    } */
+
+    /* Optional: Increase padding for better touch targets */
+    /* table th, table td {
+        padding: 12px 8px;
+    } */
+
+    /* More advanced: Transform table to card layout (complex, requires more CSS/JS) */
+}

@@ -1,0 +1,160 @@
+.add-member-page-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Lighter background for form pages */
+    max-width: 900px; /* Limit width for better form readability */
+    margin: 20px auto; /* Center the form container */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Reusing .page-header-controls if global and applicable */
+.page-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header-controls h2 { margin: 0; font-size: 1.6rem; color: #333; }
+
+.btn.btn-cancel { /* Button in the header */
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+}
+.btn.btn-cancel:hover { background-color: #545b62; }
+
+
+.add-member-form {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-section h3 {
+    font-size: 1.2rem;
+    color: #007bff; /* Theme color for section titles */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.form-grid-col-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.form-grid-col-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    color: #495057;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    text-align: right; /* Align buttons to the right */
+}
+
+.btn.btn-submit-member {
+    background-color: #28a745; /* Green for save */
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 5px;
+}
+.btn.btn-submit-member:hover { background-color: #1e7e34; }
+.btn.btn-submit-member:disabled {
+    background-color: #a3d9b1;
+    cursor: not-allowed;
+}
+
+
+.btn.btn-cancel-inline { /* For cancel button next to submit */
+    background-color: transparent;
+    color: #6c757d;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.btn.btn-cancel-inline:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+.form-error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}

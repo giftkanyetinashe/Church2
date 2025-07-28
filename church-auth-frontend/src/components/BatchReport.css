@@ -1,0 +1,92 @@
+/* src/components/BatchReport.css */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+body {
+    background-color: #fff; /* White background for printing */
+}
+
+.report-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    padding: 20px;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.church-info h1 {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}
+.church-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+}
+.report-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: right;
+    color: #333;
+}
+
+.batch-summary {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.contributions-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+.contributions-table th, .contributions-table td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+}
+.contributions-table th {
+    background-color: #f2f2f2;
+    font-weight: 500;
+}
+.contributions-table .amount {
+    text-align: right;
+}
+.contributions-table tfoot {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+.contributions-table tfoot .footer-label {
+    text-align: right;
+}
+
+.report-footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Print-specific styles to remove URLs and clean up */
+@media print {
+    @page {
+        margin: 0.75in; /* Standard page margins */
+    }
+    body {
+        -webkit-print-color-adjust: exact; /* Ensures backgrounds print in Chrome */
+        print-color-adjust: exact;
+    }
+    .report-container {
+        padding: 0; /* Remove padding when printing */
+    }
+    a[href]:after {
+        content: none !important; /* Don't show link URLs */
+    }
+}

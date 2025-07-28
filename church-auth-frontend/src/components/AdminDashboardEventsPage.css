@@ -1,0 +1,120 @@
+.admin-events-page-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Reusing .page-header-controls and .action-and-filters from GroupsPage.css if it's global */
+/* Or define them here if you want them specific */
+.page-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; /* Reduced margin as filters are below */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-header-controls h2 { margin: 0; font-size: 1.6rem; color: #333; }
+.action-and-filters { display: flex; gap: 15px; align-items: center; }
+
+.btn.btn-add-event { /* Similar to btn-add-group */
+    background-color: #17a2b8; /* Teal for events, or your preferred color */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn.btn-add-event:hover { background-color: #117a8b; } /* Darker teal */
+.btn.btn-add-event i { margin-right: 3px; }
+
+.filters-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.search-input-events,
+.filter-select-events {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+.search-input-events { flex-grow: 1; min-width: 200px; } /* Allow search to take more space */
+.filter-select-events { min-width: 160px; }
+
+.search-input-events:focus,
+.filter-select-events:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+
+.admin-events-table-container {
+    overflow-x: auto;
+}
+
+.admin-events-page-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-events-page-container table th,
+.admin-events-page-container table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.admin-events-page-container table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.admin-events-page-container table tbody tr:nth-child(even) { background-color: #fdfdfd; }
+.admin-events-page-container table tbody tr:hover { background-color: #f1f1f1; }
+
+/* Status Badges - ensure these are defined globally or copy from GroupsPage.css/MembersPage.css */
+.status-badge {
+    padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 500;
+    color: #fff; display: inline-block; min-width: 70px; text-align: center; line-height: 1.2;
+}
+.status-published { background-color: #28a745; /* Green */ }
+.status-draft { background-color: #6c757d; /* Grey */ }
+.status-cancelled { background-color: #dc3545; /* Red */ }
+.status-past { background-color: #ffc107; color: #212529; /* Yellow */ }
+/* Add more as needed: Tentative, Full, etc. */
+
+
+.actions-cell { white-space: nowrap; text-align: center; }
+
+/* Action Buttons - ensure these are defined globally or copy from GroupsPage.css/MembersPage.css */
+.action-btn {
+    background: none; border: none; cursor: pointer; padding: 6px; margin-right: 5px;
+    font-size: 1rem; color: #555; transition: color 0.2s ease; line-height: 1;
+}
+.action-btn:last-child { margin-right: 0; }
+.action-btn.view-btn:hover { color: #007bff; }
+.action-btn.edit-btn:hover { color: #ffc107; }
+.action-btn.delete-btn:hover { color: #dc3545; }
+.action-btn i { vertical-align: middle; }
+
+.no-data-message {
+    text-align: center; padding: 30px; font-style: italic; color: #777; font-size: 1rem;
+}

@@ -1,0 +1,167 @@
+/* --- Profile Header (no changes from previous version) --- */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.profile-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.profile-avatar .change-photo-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    color: #34495e;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.profile-avatar .change-photo-btn:hover {
+    background-color: #f0f2f5;
+    transform: scale(1.1);
+}
+.profile-welcome h1 {
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    border: none;
+    padding: 0;
+    color: #333;
+}
+.profile-welcome p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+/* --- Profile Card Layout --- */
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.profile-card h2 {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin: 0 0 25px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+.profile-card .card-subtitle {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* --- Form Grid --- */
+.profile-form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px;
+}
+.portal-form-group small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+input[readOnly] {
+    background-color: #e9ecef; /* Grey out read-only fields */
+    cursor: not-allowed;
+}
+
+
+/* ===== NEW: Family List Styles ===== */
+.family-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+.family-member-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+}
+.family-member-item i {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 15px;
+}
+.family-member-name {
+    font-weight: 500;
+    color: #333;
+}
+.family-member-relationship {
+    margin-left: auto;
+    background-color: #6c757d;
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+
+/* --- Actions Footer --- */
+.profile-actions-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 768px) {
+    .profile-header {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+    .profile-avatar {
+        margin-bottom: 0;
+        margin-right: 25px;
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    .profile-welcome h1 {
+        font-size: 2rem;
+    }
+
+    .profile-form-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for general grid */
+    }
+
+    .family-list {
+        grid-template-columns: 1fr 1fr; /* Two columns for family list */
+    }
+}

@@ -1,0 +1,143 @@
+/* Tablet Styles (e.g., 768px and up) */
+@media (min-width: 768px) {
+    /* --- General Layout --- */
+    .container { /* If you have a global container class, adjust its width */
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* --- Typography --- */
+    body {
+        font-size: 15px; /* Slightly larger base font for tablets */
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    /* Add other heading elements if needed: h3, h4, etc. */
+
+    /* --- Navigation (Example: Dashboard Sidebar) --- */
+    /* This assumes your Dashboard.css makes the sidebar fixed and full-width on the left for desktop */
+    /* And that .mobile-sidebar-toggle is used for the hamburger menu */
+  
+    .main-content {
+        /* This assumes the sidebar has a fixed width on tablet/desktop */
+        margin-left: 220px; /* Adjust to match tablet sidebar width */
+    }
+    .mobile-sidebar-toggle { /* The hamburger button */
+        display: none; /* Hide hamburger on tablet and up */
+    }
+    .sidebar-overlay { /* The overlay for mobile menu */
+        display: none !important; /* Ensure it's hidden on tablet and up */
+    }
+
+
+    /* --- Forms --- */
+    /* If you have global form grid classes that stack on mobile */
+    .form-grid-col-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .form-grid-col-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    /* --- Tables --- */
+    /* If you've made table cells display: block; on mobile for better stacking,
+       you might revert to default table display here.
+       Often, tables just need horizontal scroll on mobile, handled by overflow-x on a container.
+    */
+    /*
+    .members-table-container table td,
+    .members-table-container table th {
+        // display: table-cell; // If they were block on mobile
+        // white-space: nowrap; // If you want to prevent wrapping and force scroll
+    }
+    */
+
+    /* --- Specific Component Adjustments that are Global --- */
+    /* Example: Dashboard Stat Cards */
+    .stats-cards-grid { /* Assuming this class is used for your stat cards */
+        grid-template-columns: repeat(2, 1fr); /* Allow 2 cards per row on tablet */
+    }
+}
+
+
+/* Desktop Styles (e.g., 1024px and up) */
+@media (min-width: 1024px) {
+    /* --- General Layout --- */
+    .container {
+        max-width: 960px; /* Adjust for standard desktop */
+    }
+
+    /* --- Typography --- */
+    body {
+        font-size: 16px; /* Standard desktop base font */
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    /* --- Navigation (Example: Dashboard Sidebar) --- */
+    /*
+    .sidebar {
+        width: 260px; // Example full width for desktop, if different from tablet
+    }
+    .main-content {
+        margin-left: 260px; // Adjust to match desktop sidebar width
+    }
+    */
+
+    /* --- Specific Component Adjustments --- */
+    .stats-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* More flexible for desktop */
+        /* Or a fixed number: grid-template-columns: repeat(4, 1fr); */
+    }
+}
+
+/* Larger Desktop Styles (e.g., 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    /* Potentially adjust grid columns for very wide screens for things like stats cards */
+    /*
+    .stats-cards-grid {
+        grid-template-columns: repeat(4, 1fr); // Example: always 4 on very wide screens
+    }
+    */
+}
+
+/* --- Utility Classes for Responsiveness (Optional but useful) --- */
+/* Hide elements on certain screen sizes by default */
+.hide-on-mobile { display: none !important; } /* Use !important sparingly, ensure it's intended */
+.hide-on-tablet { display: none !important; }
+.hide-on-desktop { display: none !important; }
+
+/* Show elements based on screen size */
+@media (max-width: 767px) { /* Strictly Mobile */
+    .show-on-mobile-only { display: block !important; } /* Or flex, inline-block etc. */
+    /* .hide-on-tablet { display: block !important; } // This logic seems off, should be show */
+    /* .hide-on-desktop { display: block !important; } // This logic seems off */
+}
+
+@media (min-width: 768px) { /* Tablet and up */
+    .hide-on-mobile { display: block !important; } /* Or flex, inline-block etc. as appropriate for the element */
+    .show-on-tablet-up { display: block !important; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { /* Strictly Tablet */
+    .show-on-tablet-only { display: block !important; }
+    .hide-on-desktop { display: block !important; } /* Show if it was hidden for desktop */
+}
+
+@media (min-width: 1024px) { /* Desktop and up */
+    .hide-on-tablet { display: none !important; } /* If you specifically want to hide on tablet but show on desktop */
+    .show-on-desktop-up { display: block !important; }
+}
+
+/* You might want more granular control for show/hide */
+/* Example: .d-none, .d-sm-block, .d-md-flex etc. similar to Bootstrap's display utilities */

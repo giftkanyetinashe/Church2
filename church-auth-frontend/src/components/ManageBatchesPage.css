@@ -1,0 +1,227 @@
+/* src/components/ManageBatchesPage.css */
+
+.manage-batches-page-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header-controls h2 { margin: 0; font-size: 1.8rem; color: #333; }
+.page-header-controls .action-buttons { display: flex; gap: 10px; }
+
+
+/* --- Table styles --- */
+.batches-table-container { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+table th, table td { padding: 10px 12px; border: 1px solid #e0e0e0; text-align: left; vertical-align: middle; }
+table th { background-color: #f8f9fa; font-weight: 600; }
+table tbody tr:hover { background-color: #f1f1f1; }
+.amount-column { text-align: right; }
+
+/* ===== ADDED: Styles for the Reconciliation "Difference" Column ===== */
+.difference-error {
+    color: #dc3545; /* Red for mismatch */
+    font-weight: 700;
+}
+.difference-ok {
+    color: #28a745; /* Green for balanced */
+    font-weight: 500;
+}
+/* ===== END of Added Styles ===== */
+
+
+/* --- Status Badges for Batches --- */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    color: white; /* <-- ADDED: Default text color for badges */
+}
+/* MODIFIED: Standardized class names to be simpler */
+.status-badge.status-batch-open { background-color: #007bff; } /* Blue for open */
+.status-badge.status-batch-closed { background-color: #6c757d; } /* Grey */
+.status-badge.status-batch-system-closed { background-color: #17a2b8; } /* Teal for system */
+
+
+/* --- Action buttons --- */
+.actions-cell { white-space: nowrap; text-align: center; }
+.action-btn { background: none; border: none; cursor: pointer; padding: 6px; margin: 0 3px; font-size: 1rem; color: #555; }
+.action-btn.view-btn:hover { color: #007bff; } /* <-- ADDED for consistency */
+.action-btn.edit-btn:hover { color: #ffc107; }
+.action-btn.delete-btn:hover { color: #dc3545; }
+.action-btn.close-btn:hover { color: #fd7e14; }
+.action-btn.print-btn:hover { color: #17a2b8; } /* <-- ADDED: Hover for print button */
+
+
+/* --- Modal Styles for Create Batch --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.modal-content .form-group { margin-bottom: 15px; }
+.modal-content .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+
+/* MODIFIED: Expanded this selector to cover ALL input types in the modal */
+.modal-content .form-group input,
+.modal-content .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+
+/* src/components/ManageBatchesPage.css */
+
+.manage-batches-page-container {
+    padding: 15px; /* MODIFIED: Less padding for mobile-first */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page-header-controls {
+    display: flex;
+    flex-direction: column; /* MODIFIED: Stack vertically on mobile */
+    align-items: flex-start; /* Align to the left on mobile */
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-header-controls h2 {
+    margin: 0;
+    font-size: 1.6rem; /* MODIFIED: Slightly smaller for mobile */
+    color: #333;
+}
+.page-header-controls .action-buttons { display: flex; gap: 10px; width: 100%; }
+.page-header-controls .action-buttons .btn {
+    flex-grow: 1; /* MODIFIED: Make buttons take up available space on mobile */
+}
+
+/* --- Table styles --- */
+.batches-table-container { overflow-x: auto; /* This is key for table responsiveness */ }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+table th, table td { padding: 10px 12px; border: 1px solid #e0e0e0; text-align: left; vertical-align: middle; white-space: nowrap; /* MODIFIED: Prevent text wrapping in cells */ }
+table th { background-color: #f8f9fa; font-weight: 600; }
+table tbody tr:hover { background-color: #f1f1f1; }
+.amount-column { text-align: right; }
+
+/* Styles for the Reconciliation "Difference" Column */
+.difference-error { color: #dc3545; font-weight: 700; }
+.difference-ok { color: #28a745; font-weight: 500; }
+
+/* --- Status Badges for Batches --- */
+.status-badge {
+    padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;
+    font-weight: 500; display: inline-block; min-width: 60px; text-align: center;
+    color: white;
+}
+.status-badge.status-batch-open { background-color: #007bff; }
+.status-badge.status-batch-closed { background-color: #6c757d; }
+.status-badge.status-batch-system-closed { background-color: #17a2b8; }
+
+/* --- Action buttons --- */
+.actions-cell { text-align: center; }
+.action-btn { background: none; border: none; cursor: pointer; padding: 6px; margin: 0 3px; font-size: 1rem; color: #555; }
+.action-btn.view-btn:hover { color: #007bff; }
+.action-btn.edit-btn:hover { color: #ffc107; }
+.action-btn.delete-btn:hover { color: #dc3545; }
+.action-btn.close-btn:hover { color: #fd7e14; }
+.action-btn.print-btn:hover { color: #17a2b8; }
+
+/* --- Modal Styles (Modals are inherently fairly responsive) --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); display: flex;
+    align-items: center; justify-content: center; z-index: 1000;
+}
+.modal-content {
+    background-color: white; padding: 25px 20px; /* Less horizontal padding */
+    border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%; /* Responsive width */ max-width: 500px;
+}
+.modal-content h3 {
+    margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; /* Smaller title */
+    color: #333;
+}
+.modal-content .form-group { margin-bottom: 15px; }
+.modal-content .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+.modal-content .form-group input,
+.modal-content .form-group select {
+    width: 100%; padding: 10px; border: 1px solid #ccc;
+    border-radius: 4px; box-sizing: border-box; font-size: 1rem; /* Better for mobile */
+}
+.modal-actions {
+    margin-top: 25px; display: flex;
+    justify-content: flex-end; gap: 10px;
+}
+
+/* ======================================= */
+/* === Responsive Adjustments for LARGER screens === */
+/* ======================================= */
+@media (min-width: 768px) {
+    .manage-batches-page-container {
+        padding: 20px; /* Restore desktop padding */
+    }
+
+    .page-header-controls {
+        flex-direction: row; /* Go back to side-by-side */
+        align-items: center;
+    }
+    .page-header-controls h2 {
+        font-size: 1.8rem;
+    }
+    .page-header-controls .action-buttons {
+        width: auto; /* Let buttons be their natural width */
+    }
+    .page-header-controls .action-buttons .btn {
+        flex-grow: 0; /* Stop buttons from growing */
+    }
+}

@@ -1,0 +1,158 @@
+/* src/components/member_portal/pages/PrayerPage.css */
+
+.prayer-page .prayer-intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* --- Submission Form --- */
+.prayer-form-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 40px;
+}
+.prayer-form-card h2 {
+    margin-top: 0;
+    border-bottom: none;
+    font-size: 1.4rem;
+}
+.prayer-form .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.public-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px; /* Align with input field */
+}
+.public-toggle input[type="checkbox"] {
+    width: auto;
+    height: 18px;
+    width: 18px;
+}
+.public-toggle label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.public-toggle small {
+    margin-left: auto;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* --- Prayer Wall --- */
+.prayer-wall h2 {
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+.prayer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.prayer-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-left: 5px solid #3498db; /* Accent border */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+.prayer-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    flex-grow: 1; /* Pushes footer down */
+    white-space: pre-wrap; /* Respects line breaks */
+    margin-bottom: 20px;
+}
+.prayer-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+.prayer-submitter {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+.prayer-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.prayer-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    color: #6c757d;
+}
+.btn-pray {
+    background-color: transparent;
+    border: 1px solid #28a745;
+    color: #28a745;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-pray:hover {
+    background-color: #28a745;
+    color: white;
+}
+.btn-pray:disabled {
+    background-color: #28a745;
+    color: white;
+    opacity: 0.7;
+    cursor: not-allowed;
+    border-color: #28a745;
+}
+.btn-pray:disabled:hover {
+    opacity: 0.7; /* Keep it consistent */
+}
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 600px) {
+    .prayer-form .form-row {
+        flex-direction: row;
+        align-items: center;
+    }
+    .prayer-form .form-row .portal-form-group {
+        flex: 1;
+    }
+    .public-toggle {
+        padding-top: 0;
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 768px) {
+    .prayer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1200px) {
+    .prayer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

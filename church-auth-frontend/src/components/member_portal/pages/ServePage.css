@@ -1,0 +1,126 @@
+.serve-intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px; /* Keep intro text from getting too wide */
+    margin-bottom: 30px;
+}
+
+/* --- Filter Styles --- */
+.serve-filters {
+    display: flex;
+    flex-wrap: wrap; /* Allow filters to wrap on small screens */
+    align-items: center;
+    gap: 10px 15px; /* Row and column gap */
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+.serve-filters span {
+    font-weight: 500;
+    color: #333;
+}
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.filter-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    color: #495057;
+    border-radius: 20px; /* Pill shape */
+    transition: all 0.2s ease-in-out;
+}
+.filter-btn:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+.filter-btn.active {
+    background-color: #34495e; /* Your theme's primary color */
+    color: white;
+    border-color: #34495e;
+}
+
+/* --- Opportunity Grid & Cards --- */
+.opportunity-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: single column */
+    gap: 25px;
+}
+
+.opportunity-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    position: relative; /* For the ministry tag */
+    overflow: hidden; /* To contain the tag */
+}
+.opportunity-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #333;
+}
+.opportunity-description {
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1; /* This makes the description take up available space, pushing details/button down */
+    margin-bottom: 20px;
+}
+.opportunity-details {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.opportunity-details p {
+    margin: 5px 0;
+    color: #444;
+}
+.opportunity-details strong {
+    color: #000;
+}
+.btn-express-interest {
+    width: 100%; /* Make button full width of the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto; /* Pushes button to the bottom if cards have different heights */
+}
+
+/* Ministry Tag Styling */
+.ministry-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #6c757d; /* Default tag color */
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-bottom-left-radius: 8px;
+}
+/* Custom colors for tags */
+.tag-kids { background-color: #f1c40f; color: #333; }
+.tag-hospitality { background-color: #e74c3c; }
+.tag-worship { background-color: #9b59b6; }
+.tag-youth { background-color: #3498db; }
+
+/* Responsive adjustments for the grid */
+@media (min-width: 768px) {
+    .opportunity-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+    }
+}
+@media (min-width: 1024px) {
+    .opportunity-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
+    }
+}

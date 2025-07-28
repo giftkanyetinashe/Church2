@@ -1,0 +1,143 @@
+/* src/components/member_portal/pages/MyGivingPage.css */
+
+/* --- Header Section --- */
+.giving-header {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+.giving-header-text h1 {
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.giving-intro-text {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.5;
+}
+.giving-header-actions .btn-portal {
+    padding: 12px 25px; /* Make the main CTA button bigger */
+    font-size: 1.1rem;
+    width: 100%; /* Full width on mobile */
+}
+
+/* --- Summary Cards --- */
+.giving-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.summary-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-left: 5px solid #34495e; /* Theme color accent */
+}
+.summary-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+.summary-card .summary-value {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+}
+.summary-card small {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Specific styling for the statements card */
+.statements-card {
+    background-color: #34495e; /* Invert colors for emphasis */
+    color: white;
+    border-left-color: #61dafb; /* Accent color */
+}
+.statements-card h4, .statements-card p, .statements-card small {
+    color: #e0e0e0;
+}
+.statements-card p {
+    font-size: 0.95rem;
+    margin: 10px 0 15px 0;
+}
+.statements-card .btn-portal {
+    background-color: rgba(255,255,255,0.9);
+    color: #34495e;
+    border: none;
+}
+.statements-card .btn-portal:hover {
+    background-color: white;
+}
+
+
+/* --- Recent Transactions Table --- */
+.recent-transactions h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+.transactions-table-container {
+    overflow-x: auto; /* Makes table scroll horizontally on small screens */
+}
+.transactions-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.transactions-table-container th, .transactions-table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+.transactions-table-container th {
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+.transactions-table-container td {
+    font-size: 0.95rem;
+}
+.transactions-table-container .amount-col {
+    text-align: right;
+    font-weight: 500;
+}
+.view-all-history {
+    margin-top: 20px;
+    text-align: right;
+}
+.view-all-history a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.view-all-history a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 768px) {
+    .giving-header {
+        flex-direction: row; /* Side-by-side */
+        align-items: center;
+    }
+    .giving-header-actions .btn-portal {
+        width: auto; /* Auto width on desktop */
+    }
+    .giving-summary-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+}

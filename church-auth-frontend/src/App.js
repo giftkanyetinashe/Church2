@@ -44,7 +44,7 @@ import ResourcesPage from './components/member_portal/pages/ResourcesPage';
 // Assuming MemberContext is set up if needed for admin dashboard data
 // import { MemberProvider } from './contexts/MemberContext'; // Uncomment if using MemberContext for admin
 
-function App() 
+function App() {
   const mockUserRole = "MEMBER"; // Change this to simulate different user roles like "ADMIN","MEMBER", "PASTOR", etc.
   const isAuthenticated = true;
 
